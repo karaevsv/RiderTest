@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication7.Pages.MainPage" Initialized="StyledElement_OnInitialized">
+    <Grid RowDefinitions="*, 100">
+        <DataGrid Name="MainDG" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Role.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1">
+            <Button Content="Add" Click="Button_OnClick"/>
+            <Button Content="Err" Click="Button_OnClick1"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
