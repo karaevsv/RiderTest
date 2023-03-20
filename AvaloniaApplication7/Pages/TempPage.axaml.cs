@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -21,5 +23,13 @@ public partial class TempPage : UserControl
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         Navigation.Content = new MainPage();
+    }
+
+    private void StyledElement_OnInitialized(object? sender, EventArgs e)
+    {
+        var cb = this.FindControl<ComboBox>("RolesCB");
+        cb.Items = Db.Roles.ToList();
+        cb.SelectedIndex = 0;
+
     }
 }
